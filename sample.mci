@@ -1,0 +1,53 @@
+﻿##########################################
+# sample.mci
+# 	A template for input files for CUDAMCML_INC.
+#	Any characters following a # are ignored as comments
+#	Space lines are also ignored.
+#	Lengths are in cm, mua and mus are in 1/cm.
+#
+#	Multiple runs may be stipulated.
+##########################################
+
+1.0                      	# file version
+2                       	# number of runs
+
+#### SPECIFY DATA FOR RUN 1
+#InParm                    	# Input parameters. cm is used.
+exp_cen 	A	      	# output file name (without extension), ASCII.
+10000000                  	# No. of photons
+0.3	0.3               	# dx, dy [cm]
+20	20         	       	# No. of dz, dx, dy.
+0.  0.  0.			# Posición de la fibra de detección (type,x,y; type: 0 exit face, 1 entry face) 	
+0.  0.  			# Posición de la fuente (x,y)
+#5				# Size of the detector
+
+1                        	# Number of layers
+#n	mua	mus	g	d         	# One line for each layer
+1                         		# n for medium above
+1.4	0.164 	51.6 	0.8 	3    	# layer 1
+1                        		# n for medium below
+2				# Number of inclusions
+#type x y  z   r   n  mua mus  g            	# One line per inclusion (type: 0 for esphere, 1 for cilinder (y ignored))
+1. -1. 0. 2.5 0.5 1.4 9 50. 0.8
+0. 2. -2. 2.5 0.5 1.4 9 50. 0.8
+
+#### SPECIFY DATA FOR RUN 2
+#InParm                    	# Input parameters. cm is used.
+exp_cen_ref 	A	      	# output file name (without extension), ASCII.
+10000000                  	# No. of photons
+0.3	0.3               	# dx, dy [cm]
+20	20         	       	# No. of dz, dx, dy.
+1.  2.  0.			# Posición de la fibra de detección (type,x,y; type: 0 exit face, 1 entry face) 	
+0.  0.  			# Posición de la fuente (x,y)
+#5				# Size of the detector
+
+1                        	# Number of layers
+#n	mua	mus	g	d         	# One line for each layer
+1                         	# n for medium above
+1.4	0.164 	51.6 	0.8 	3    	# layer 1
+1                        	# n for medium below
+2				# Number of inclusions
+#type x y  z   r   n  mua mus  g            	# One line per inclusion (type: 0 for esphere, 1 for cilinder (y ignored))
+1. -1. 0. 2.5 0.5 1.4 9 50. 0.8
+0. 2. -2. 2.5 0.5 1.4 9 50. 0.8
+
